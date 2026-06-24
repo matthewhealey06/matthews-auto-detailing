@@ -1,3 +1,19 @@
+function setupMobileMenu() {
+  const icon = document.querySelector(".mobile-menu-icon");
+  const menu = document.querySelector(".mobile-menu");
+  if (!icon || !menu) return;
+
+  icon.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupMobileMenu();
+  setActiveNav();
+});
+
 const testimonials = [
   {
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio, et ipsa, vitae sapiente maiores tempore quae aliquam necessitatibus, beatae non voluptatum aliquid.",
