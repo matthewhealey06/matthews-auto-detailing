@@ -696,4 +696,5 @@ footer {
   display: flex;
   justify-content: center;
   gap: 10%;
+  text-align: center;
 }
