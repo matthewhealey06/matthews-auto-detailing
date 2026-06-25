@@ -84,8 +84,18 @@ rightBtn.addEventListener("click", () => {
 });
 (function() {
   const p = ['07', '593', ' 284', ' 599'];
-  const el = document.getElementById('phone-link');
-  const num = p.join('');
-  el.href = 'tel:' + num.replace(/\s/g, '');
-  el.textContent = num;
+  const num = p.join('');                  // "07593 284 599"  (display)
+  const digits = num.replace(/\s/g, '');   // "07593284599"     (tel)
+  const intl = digits.replace(/^0/, '44'); // "447593284599"    (whatsapp)
+
+  const tel = document.getElementById('phone-link');
+  if (tel) {
+    tel.href = 'tel:' + digits;
+    tel.textContent = num;
+  }
+
+  const wa = document.getElementById('whatsapp-link');
+  if (wa) {
+    wa.href = 'https://wa.me/' + intl;
+  }
 })();
